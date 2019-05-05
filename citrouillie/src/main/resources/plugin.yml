@@ -1,4 +1,5 @@
 name: PumpMyChat
-main: fr.pumpmykins.citrouillie
+main: fr.pumpmykins.citrouillie.MainCitrouille
+api-version: 1.13
 version: 1.0
 author: Sufike
