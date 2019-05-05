@@ -60,5 +60,14 @@
 			<version>1.13.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>net.tnemc</groupId>
+			<artifactId>core</artifactId>
+			<version>0.1.1.7</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/TNE.jar</systemPath>
+		</dependency>
+		
 	</dependencies>
 </project>
