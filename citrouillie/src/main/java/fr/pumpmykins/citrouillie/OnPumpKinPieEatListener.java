@@ -18,17 +18,14 @@ public class OnPumpKinPieEatListener implements Listener {
 		if(event.getItem().getType().equals(Material.PUMPKIN_PIE)) {
 			Player p = event.getPlayer();
 			
+			p.addPotionEffect(PotionEffectType.ABSORPTION.createEffect(4800, 2));
+			
 			double max_health = p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue();
 			double health = p.getHealth();
 			if(health < max_health) {
 				
-				double max_regen = max_health - health;
-				if(health + 4 > max_regen)
-					p.setHealth(health+max_regen);
-				else
-					p.setHealth(health+4);
+				p.setHealth(health+4);
 			}
-			p.addPotionEffect(PotionEffectType.ABSORPTION.createEffect(4800, 2));
 			
 		} else if(event.getItem().getType().equals(Material.GOLDEN_APPLE) || event.getItem().getType().equals(Material.ENCHANTED_GOLDEN_APPLE)) {
 			

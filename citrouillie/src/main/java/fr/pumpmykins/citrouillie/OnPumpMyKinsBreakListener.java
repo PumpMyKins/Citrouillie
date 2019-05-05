@@ -39,6 +39,8 @@ public class OnPumpMyKinsBreakListener implements Listener {
 			if(r == 499 && r == 123)
 				event.setCancelled(true);
 			
+			System.out.println(Integer.toString(r));
+			
 		}
 	}
 }
