@@ -29,7 +29,7 @@ public class OnPumpKinPieEatListener implements Listener {
 				p.setHealth(max_health);
 			}
 			
-			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 4800, 2));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 4800, 2), true);
 			
 		} else if(event.getItem().getType().equals(Material.GOLDEN_APPLE) || event.getItem().getType().equals(Material.ENCHANTED_GOLDEN_APPLE)) {
 			

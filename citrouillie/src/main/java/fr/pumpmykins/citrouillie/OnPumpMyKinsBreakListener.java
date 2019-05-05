@@ -24,19 +24,19 @@ public class OnPumpMyKinsBreakListener implements Listener {
 			int r = rand.nextInt(500);
 			
 			if(r < 4) 
-				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 600, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 600, 2), true);
 			if(r == 1)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 5));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 5), true);
 			if(r > 400)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 40, 1));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 40, 1), true);
 			if(r > 490)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 200, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 200, 2), true);
 			if(r < 400 && r > 300)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 600, 4));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 600, 4), true);
 			if(r > 100)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200, 1));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200, 1), true);
 			if(r < 100)
-				p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,2400, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,2400, 2), true);
 			if(r == 499 && r == 123)
 				event.setCancelled(true);
 			
