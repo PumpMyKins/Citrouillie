@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class OnPumpMyKinsBreakListener implements Listener {
@@ -23,19 +24,19 @@ public class OnPumpMyKinsBreakListener implements Listener {
 			int r = rand.nextInt(500);
 			
 			if(r < 4) 
-				p.addPotionEffect(PotionEffectType.SLOW.createEffect(600, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 600, 2));
 			if(r == 1)
-				p.addPotionEffect(PotionEffectType.LUCK.createEffect(12000, 5));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 5));
 			if(r > 400)
-				p.addPotionEffect(PotionEffectType.WITHER.createEffect(40, 1));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 40, 1));
 			if(r > 490)
-				p.addPotionEffect(PotionEffectType.WITHER.createEffect(200, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 200, 2));
 			if(r < 400 && r > 300)
-				p.addPotionEffect(PotionEffectType.LEVITATION.createEffect(600, 4));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 600, 4));
 			if(r > 100)
-				p.addPotionEffect(PotionEffectType.BLINDNESS.createEffect(200, 1));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200, 1));
 			if(r < 100)
-				p.addPotionEffect(PotionEffectType.FAST_DIGGING.createEffect(2400, 2));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,2400, 2));
 			if(r == 499 && r == 123)
 				event.setCancelled(true);
 			

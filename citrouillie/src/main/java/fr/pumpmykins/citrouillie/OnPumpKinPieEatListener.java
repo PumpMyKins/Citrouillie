@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent.RegainReason;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class OnPumpKinPieEatListener implements Listener {
@@ -18,14 +19,17 @@ public class OnPumpKinPieEatListener implements Listener {
 		if(event.getItem().getType().equals(Material.PUMPKIN_PIE)) {
 			Player p = event.getPlayer();
 			
-			p.addPotionEffect(PotionEffectType.ABSORPTION.createEffect(4800, 2));
-			
 			double max_health = p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue();
 			double health = p.getHealth();
-			if(health < max_health) {
+			if(health+4 < max_health) {
 				
 				p.setHealth(health+4);
+			} else {
+				
+				p.setHealth(max_health);
 			}
+			
+			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 4800, 2));
 			
 		} else if(event.getItem().getType().equals(Material.GOLDEN_APPLE) || event.getItem().getType().equals(Material.ENCHANTED_GOLDEN_APPLE)) {
 			
