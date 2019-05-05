@@ -29,7 +29,7 @@ public class OnPumpMyKinsBreakListener implements Listener {
 			if(r > 400)
 				p.addPotionEffect(PotionEffectType.WITHER.createEffect(40, 1));
 			if(r > 490)
-				p.addPotionEffect(PotionEffectType.WITHER.createEffect(120, 2));
+				p.addPotionEffect(PotionEffectType.WITHER.createEffect(200, 2));
 			if(r < 400 && r > 300)
 				p.addPotionEffect(PotionEffectType.LEVITATION.createEffect(600, 4));
 			if(r > 100)
