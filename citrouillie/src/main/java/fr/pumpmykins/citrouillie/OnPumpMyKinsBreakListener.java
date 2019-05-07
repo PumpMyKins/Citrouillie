@@ -46,13 +46,13 @@ public class OnPumpMyKinsBreakListener implements Listener {
 			}
 			if(r > 25) {
 				
-				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 40, 1), true);
+				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 200, 1), true);
+			}
+			if(r > 90) {
+				
+				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 0), true);
 			}
 			if(r > 95) {
-				
-				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 40, 0), true);
-			}
-			if(r > 98) {
 				
 				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 200, 2), true);
 				event.setCancelled(true);

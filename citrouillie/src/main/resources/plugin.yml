@@ -1,5 +1,12 @@
 name: PumpMyChat
 main: fr.pumpmykins.citrouillie.MainCitrouille
 api-version: 1.13
-version: 1.0
+version: 0.4
 author: Sufike
+commands:
+   regen:
+      description: Permet de regenerer
+      usage: /regen <null / nbre de coeur>
+   spawn:
+      description: Permet de retourner au spawn
+      usage: /spawn

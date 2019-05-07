@@ -25,7 +25,7 @@ public class RegenCommandExecutor implements CommandExecutor {
 				if(args.length < 1) {
 					
 					int cost = 0;
-					cost =(int) ((p.getHealth() / 2) *100);
+					cost =(int) (((p.getHealth() / 2)/2) *100);
 					
 					if(ecoAPI.canRemoveHoldings(sender.getName(),new BigDecimal(cost))) {
 						
@@ -49,19 +49,14 @@ public class RegenCommandExecutor implements CommandExecutor {
 						int cost = 0;
 						int regen = 0;
 						
-						for(int i = 0; i < Integer.parseInt(args[0]); i++) {
+						for(int i = 0; i < Integer.parseInt(args[0])-1; i++) {
 							
 							regen+=2;
 							if(p.getHealth()+ regen > max_health) {
 								break;
 							}
-							double v = p.getHealth();
-							v = v / 2;
-							BigDecimal bd = new BigDecimal(v);
-							bd.setScale(0, BigDecimal.ROUND_FLOOR);
-							v = bd.doubleValue();
 							
-							cost = (int) (cost + ((1*v)/2 * 100));
+							cost = (int) (cost + (((p.getHealth() + i*2)/4)*100));
 							
 						}
 						if(ecoAPI.canRemoveHoldings(sender.getName(),new BigDecimal(cost))) {

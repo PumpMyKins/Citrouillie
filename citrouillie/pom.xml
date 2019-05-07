@@ -5,7 +5,7 @@
 
 	<groupId>fr.pumpmykins</groupId>
 	<artifactId>citrouillie</artifactId>
-	<version>0.1</version>
+	<version>0.4</version>
 	<packaging>jar</packaging>
 	<name>citrouillie</name>
 
