@@ -46,35 +46,29 @@ public class RegenCommandExecutor implements CommandExecutor {
 					
 					if(args[0].matches("-?(0|[1-9]\\d*)")) {
 						
-						int cost = 0;
-						int regen = 0;
+						int regen = Integer.parseInt(args[0])*2;
 						
-						for(int i = 0; i < Integer.parseInt(args[0])-1; i++) {
+						while(p.getHealth() + regen > max_health) {
 							
-							regen+=2;
-							if(p.getHealth()+ regen > max_health) {
-								break;
-							}
-							
-							cost = (int) (cost + (((p.getHealth() + i*2)/4)*100));
-							
+							regen = regen-1;
 						}
-						if(ecoAPI.canRemoveHoldings(sender.getName(),new BigDecimal(cost))) {
+						int h =(int) p.getHealth();
+						int cost = 0;
+						for(int i = regen;i != 0; i--) {
+						
+							cost = cost + (h*50);
+							h = h+1;
+						}
+						if(ecoAPI.canRemoveHoldings(sender.getName(), new BigDecimal(cost))) {
 							
 							ecoAPI.removeHoldings(sender.getName(), new BigDecimal(cost));
-							double health = p.getHealth();
-							if(health+regen > max_health) {
-								p.setHealth(max_health);
-							} else {	
-								p.setHealth(health+regen);
-							}
-							p.sendMessage(Integer.toString(regen/2)+" Coeur vous à été redonné");
+							p.setHealth(p.getHealth()+ regen);
 							
+							p.sendMessage(Integer.toString(regen) +"vous ont été redonné");
 						} else {
 							
 							p.sendMessage("Vous n'avez pas l'argent necessaire !");
 						}
-						
 						
 					} else {
 						
