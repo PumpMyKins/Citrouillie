@@ -1,5 +1,6 @@
 package fr.pumpmykins.citrouillie;
 
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -15,7 +16,9 @@ public class OnPumpkinBreakByPiston implements Listener {
             Material type = block.getType();
             if (type.equals(Material.PUMPKIN)) {
                 event.setCancelled(true);
-                event.getBlock().setType(Material.AIR);
+                block.setType(Material.AIR);
+                block.getWorld().createExplosion(block.getLocation(), 2F);
+                block.getWorld().playEffect(block.getLocation(), Effect.ZOMBIE_DESTROY_DOOR, Effect.SMOKE);
             }
         }
 	}
