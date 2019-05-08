@@ -18,7 +18,6 @@ public class OnPumpkinBreakByPiston implements Listener {
                 event.setCancelled(true);
                 block.setType(Material.AIR);
                 block.getWorld().createExplosion(block.getLocation(), 2F);
-                block.getWorld().playEffect(block.getLocation(), Effect.ZOMBIE_DESTROY_DOOR, Effect.SMOKE);
             }
         }
 	}
