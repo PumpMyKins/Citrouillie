@@ -12,6 +12,7 @@ public class MainCitrouille extends JavaPlugin {
 		
 		getServer().getPluginManager().registerEvents(new OnPumpMyKinsBreakListener(), this);
 		getServer().getPluginManager().registerEvents(new OnPumpKinPieEatListener(), this);
+		getServer().getPluginManager().registerEvents(new OnPumpkinBreakByPiston(), this);
 		this.getCommand("regen").setExecutor(new RegenCommandExecutor());
 		this.getCommand("spawn").setExecutor(new SpawnCommandExecutor());
 	}
